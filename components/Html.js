@@ -7,12 +7,15 @@ const converter = new showdown.Converter({
 });
 converter.setFlavor('github');
 
-const HTML = ({ md, className = '' }) => {
+const HTML = ({ md, className = '', style = ''}) => {
   return (
-    <div
-      dangerouslySetInnerHTML={{__html: converter.makeHtml(md)}}
-      className={`${className} markdown-body`}
-    />
+    <>
+      <div
+        dangerouslySetInnerHTML={{__html: converter.makeHtml(md)}}
+        className={`${className} markdown-body`}
+      />
+      <style jsx>{`${style}`}</style>
+    </>
   );
 };
 
