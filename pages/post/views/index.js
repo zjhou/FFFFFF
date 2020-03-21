@@ -5,3 +5,6 @@ import NotFound from './common_views/not_found';
 export const getPostView = (pid) => {
   return POST_VIEW_MAPPING[pid] || NotFound;
 };
+
+// hack: fix zeit optimization failed error;
+export default () => null;

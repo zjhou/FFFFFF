@@ -29,7 +29,7 @@ const render404 = () => {
   )
 };
 
-export const whatHappened = (post) => {
+const WhatHappened = (post) => {
   return (
     <Frame
       RHCenter
@@ -42,3 +42,5 @@ export const whatHappened = (post) => {
     />
   )
 };
+
+export default WhatHappened;
