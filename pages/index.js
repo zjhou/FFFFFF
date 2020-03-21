@@ -10,7 +10,6 @@ const LinkToContent = ({label}) => (<Link href="/content"><a>{label}</a></Link>)
 export default function Index() {
   return (
     <Frame
-      nextPageSrc="/content"
       leftRenderer={() => <About />}
       rightRenderer={() => (
         <Cover

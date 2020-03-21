@@ -1,5 +1,9 @@
+* {
+  font-size: 12px;
+}
+
 body {
-  font-family: Songti TC;
+  font-family: Songti TC, serif;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
