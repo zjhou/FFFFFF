@@ -9,7 +9,7 @@ const customMarkdownStyle = `
   line-height: 1.76 !important;
 `;
 
-const renderPostContent = (p) => () => {
+export const renderPostContent = (p) => () => {
   return (
     <div className="post-content">
       <HTML md={p.content} style={customMarkdownStyle} />

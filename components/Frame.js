@@ -108,7 +108,7 @@ const Frame = ({
 
         .right .frame-btn {
           right: 0;
-          border-left: none;
+          border-right: none;
           border-top: none;
           border-bottom: none;
         }

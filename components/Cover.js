@@ -4,6 +4,7 @@ const Cover = (props) => {
   const {
     title = '',
     subTitle = '',
+    textColor = '#fff',
     bgSrc = IMG_RES.defaultCoverBg,
   } = props;
 
@@ -15,7 +16,7 @@ const Cover = (props) => {
       </div>
       <style jsx>{`
         .cover {
-          width: calc(100% - 1px);
+          width: 100%;
           height: 100%;
           background-image: url(${bgSrc});
           background-size: cover;
@@ -24,7 +25,7 @@ const Cover = (props) => {
         .text {
           padding-top: 43px;
           padding-left: 43px;
-          color: #fff;
+          color: ${textColor};
         }
 
         .title {
