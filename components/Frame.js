@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link'
 
 const LinkTo = ({ src }) => (
@@ -15,24 +16,44 @@ const Frame = ({
   rightRenderer = () => null,
   nextPageSrc = '',
   prevPageSrc = '',
+  borderColor = '#e0e0e0',
   LHCenter = false,
   LVCenter = false,
   RHCenter = false,
   RVCenter = false,
 }) => {
-
   return (
     <div className="frame">
+      <div className="left">
+        <div>
+          {leftRenderer()}
+          {prevPageSrc && (
+            <div className="frame-btn ">
+              <LinkTo src={prevPageSrc} />
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="right">
+        <div>
+          {nextPageSrc && (
+            <div className="frame-btn ">
+              <LinkTo src={nextPageSrc} />
+            </div>
+          )}
+          {rightRenderer()}
+        </div>
+      </div>
       <style jsx>{`
         .frame {
           width: 1000px;
           height: 600px;
-          border: solid 1px #e0e0e0;
+          border: solid 1px ${borderColor};
           background-color: #FFFFFF;
           display: flex;
         }
         .left {
-          border-right: solid 1px #e0e0e0;
+          border-right: solid 1px ${borderColor};
         }
         .left > div {
           ${LHCenter || LVCenter ? 'display: flex;' : ''}
@@ -76,40 +97,26 @@ const Frame = ({
 
         .left .frame-btn {
           left: 0;
+          border-left: none;
+          border-top: none;
+          border-bottom: none;
         }
 
         .left .frame-btn:hover {
-          border-right: solid 1px rgba(224, 224, 224, 0.5);
+          border-right: solid 1px ${ borderColor || 'rgba(224, 224, 224, 0.5)'};
         }
 
         .right .frame-btn {
           right: 0;
+          border-left: none;
+          border-top: none;
+          border-bottom: none;
         }
 
         .right .frame-btn:hover {
-          border-left: solid 1px rgba(224, 224, 224, 0.5);
+          border-left: solid 1px ${ borderColor || 'rgba(224, 224, 224, 0.5)'};
         }
       `}</style>
-      <div className="left">
-        <div>
-          {leftRenderer()}
-          {prevPageSrc && (
-            <div className="frame-btn ">
-              <LinkTo src={prevPageSrc} />
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="right">
-        <div>
-          {nextPageSrc && (
-            <div className="frame-btn ">
-              <LinkTo src={nextPageSrc} />
-            </div>
-          )}
-          {rightRenderer()}
-        </div>
-      </div>
     </div>
   )
 }

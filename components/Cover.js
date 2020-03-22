@@ -1,8 +1,10 @@
+import { IMG_RES } from '../constants';
+
 const Cover = (props) => {
   const {
     title = '',
     subTitle = '',
-    bgSrc = '',
+    bgSrc = IMG_RES.defaultCoverBg,
   } = props;
 
   return (

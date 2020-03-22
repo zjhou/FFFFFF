@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Frame from '../../../../components/Frame';
 import HTML from '../../../../components/Html';
 
@@ -21,16 +22,7 @@ const renderPostContent = (p) => () => {
   )
 };
 
-const render404 = () => {
-  return (
-    <pre className="not-found">
-      404
-      <style>{` pre.not-found {color: #e0e0e0} `}</style>
-    </pre>
-  )
-};
-
-const WhatHappened = (post) => {
+const ShortPost = ({ post, leftRenderer = () => null }) => {
   return (
     <Frame
       RHCenter
@@ -38,10 +30,10 @@ const WhatHappened = (post) => {
       LHCenter
       LVCenter
       prevPageSrc="/content"
-      leftRenderer={render404}
+      leftRenderer={leftRenderer}
       rightRenderer={renderPostContent(post)}
     />
   )
 };
 
-export default WhatHappened;
+export default ShortPost;

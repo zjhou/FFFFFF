@@ -2,16 +2,15 @@ import { useRouter } from 'next/router'
 import fetch from 'node-fetch'
 
 import { getPostView } from './views';
-
-const END_POINT = 'https://api.zjh.im/z/posts';
+import { API } from '../../constants';
 
 export async function getStaticProps() {
-  const res = await fetch(END_POINT);
+  const res = await fetch(API.endPoint);
   const posts  = await res.json();
   const postsMapping = {};
   posts.forEach((p) => {
     postsMapping[p.id] = p;
-  })
+  });
   return {
     props: {
       postsMapping,
@@ -20,7 +19,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(END_POINT);
+  const res = await fetch(API.endPoint);
   const posts  = await res.json();
 
   const paths = posts.map(post => ({
@@ -31,7 +30,7 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postsMapping }) {
-  const router = useRouter()
-  const { pid } = router.query
+  const router = useRouter();
+  const { pid } = router.query;
   return getPostView(pid)(postsMapping[pid]);
 }

@@ -1,14 +1,17 @@
-import Frame from '../components/Frame'
 import fetch from 'node-fetch'
 import Link from 'next/link'
 
+import Frame from '../components/Frame'
+import { POST_VIEW_MAPPING } from './post/views/post_view_mapping';
+import { API } from '../constants';
+
 export async function getStaticProps() {
-  const END_POINT = 'https://api.zjh.im/z/posts';
-  const res = await fetch(END_POINT);
+  const res = await fetch(API.endPoint);
   const posts  = await res.json();
+  const supportPosts = posts.filter(({ id }) => POST_VIEW_MAPPING[id]);
   return {
     props: {
-      posts: posts.slice(0, 5),
+      posts: supportPosts
     },
   }
 }
