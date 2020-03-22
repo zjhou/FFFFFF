@@ -2,7 +2,7 @@ import React from 'react';
 
 import WhatHappened from './dedicated_views/what_happened'
 import OldDays from './dedicated_views/old_days';
-import ShortPost from './common_views/short_post';
+import { ShortPost } from './common_views/short_post';
 
 const DefaultRender = (p) => <ShortPost post={p} />;
 

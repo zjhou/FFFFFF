@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import fetch from 'node-fetch'
 
-import { getPostView } from './views';
+import { getPostView } from '../../components/views';
 import { API } from '../../constants';
 
 export async function getStaticProps() {

@@ -1,5 +1,5 @@
-import Frame from '../../../../components/Frame';
 import React from 'react';
+import Frame from '../../Frame';
 
 const render404 = () => {
   return (

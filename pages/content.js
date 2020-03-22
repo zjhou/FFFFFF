@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import Link from 'next/link'
 
 import Frame from '../components/Frame'
-import { POST_VIEW_MAPPING } from './post/views/post_view_mapping';
+import { POST_VIEW_MAPPING } from '../components/views/post_view_mapping';
 import { API } from '../constants';
 
 export async function getStaticProps() {

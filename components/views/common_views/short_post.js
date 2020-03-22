@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Frame from '../../../../components/Frame';
-import HTML from '../../../../components/Html';
+import Frame from '../../Frame';
+import HTML from '../../Html';
 
 const customMarkdownStyle = `
   color: #535353;
@@ -22,7 +22,7 @@ const renderPostContent = (p) => () => {
   )
 };
 
-const ShortPost = ({ post, leftRenderer = () => null }) => {
+export const ShortPost = ({ post, leftRenderer = () => null }) => {
   return (
     <Frame
       RHCenter
@@ -36,4 +36,4 @@ const ShortPost = ({ post, leftRenderer = () => null }) => {
   )
 };
 
-export default ShortPost;
+export default () => null;

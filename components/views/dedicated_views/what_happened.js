@@ -1,5 +1,5 @@
 import React from 'react';
-import ShortPost from '../common_views/short_post';
+import { ShortPost } from '../common_views/short_post';
 
 const render404 = () => {
   return (
