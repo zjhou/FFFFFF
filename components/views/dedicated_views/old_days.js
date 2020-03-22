@@ -11,15 +11,17 @@ const renderOldDays = (p) => () => {
           font-size: 14px;
           line-height: 1.7;
           text-align: justify;
+          color: #535353;
+          padding: 0 2px;
         }
         
         .old-days .placeholder {
           height: 14px;
-          width: 72px;
-          background-color: black; 
+          width: 55px;
+          background-color: #c4c4c4; 
           position: absolute;
           bottom: 6px;
-          right: 1px;
+          right: 2px;
         }
       `}</style>
     </div>
@@ -30,7 +32,6 @@ const OldDays = (post) => {
   return (
     <Frame
       prevPageSrc="/content"
-      borderColor="black"
       rightRenderer={renderOldDays(post)}
     />
   )
