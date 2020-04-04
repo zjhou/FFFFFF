@@ -15,10 +15,10 @@ const BaseHighlightEle = ({
         position: relative;
         width: ${size[0]}px;
         height: ${size[1]}px;
+        background-image: url(${bgSrc});
         background-size: cover;
         background-position-y: ${bgPosY};
         background-position-X: ${bgPosX};
-        background: url(${bgSrc});
       }
 
       .highlight-element::before,
@@ -46,6 +46,7 @@ const BaseHighlightEle = ({
 const HighlightEle = withTooltip(BaseHighlightEle);
 
 export default ({ eleName, eleClass, size, ...rest }) => {
+  console.log(rest);
   return (
     <HighlightEle
       size={size}
