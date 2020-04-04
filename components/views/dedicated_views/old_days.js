@@ -38,11 +38,13 @@ const OldDays = (post) => {
       leftRenderer={() =>
         <HighlightEle
           bgSrc={IMG_RES.dogBehindTheWall}
-          size={[329, 28]}
+          size={[329, 60]}
           eleName="img"
           eleClass="dog-behind-the-wall"
         />
       }
+      LHCenter
+      LVCenter
     />
   )
 };
