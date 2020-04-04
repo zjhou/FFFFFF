@@ -1,5 +1,7 @@
 import React from 'react';
 import Frame from '../../Frame';
+import HighlightEle from '../../HighlightEle';
+import {IMG_RES} from '../../../constants';
 
 const renderOldDays = (p) => () => {
   return (
@@ -33,6 +35,14 @@ const OldDays = (post) => {
     <Frame
       prevPageSrc="/content"
       rightRenderer={renderOldDays(post)}
+      leftRenderer={
+        <HighlightEle
+          bgSrc={IMG_RES.dogBehindTheWall}
+          size={[329, 28]}
+          eleName="img"
+          eleClass="dog-behind-the-wall"
+        />
+      }
     />
   )
 };
