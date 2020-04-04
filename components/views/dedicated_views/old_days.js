@@ -35,7 +35,7 @@ const OldDays = (post) => {
     <Frame
       prevPageSrc="/content"
       rightRenderer={renderOldDays(post)}
-      leftRenderer={
+      leftRenderer={() =>
         <HighlightEle
           bgSrc={IMG_RES.dogBehindTheWall}
           size={[329, 28]}
