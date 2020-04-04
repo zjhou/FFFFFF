@@ -4,7 +4,9 @@ import EleDesc from './EleDesc';
 
 const BaseHighlightEle = ({
   size=[316, 58],
-  bgSrc = 'https://picsum.photos/316/58'
+  bgSrc = 'https://picsum.photos/316/58',
+  bgPosX = '0',
+  bgPosY  = '50%',
 }) => {
   return (
     <div className="highlight-element">
@@ -14,6 +16,8 @@ const BaseHighlightEle = ({
         width: ${size[0]}px;
         height: ${size[1]}px;
         background-size: cover;
+        background-position-y: ${bgPosY};
+        background-position-X: ${bgPosX};
         background: url(${bgSrc});
       }
 
@@ -48,7 +52,7 @@ export default ({ eleName, eleClass, size, ...rest }) => {
       tooltip={
         <EleDesc
           tagName={eleName}
-          selector={eleClass}
+          selector={'.' + eleClass}
           size={size}
         />
       }
