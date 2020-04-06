@@ -5,6 +5,7 @@ const Cover = (props) => {
     title = '',
     subTitle = '',
     textColor = '#fff',
+    titleSize = 64,
     bgSrc = IMG_RES.defaultCoverBg,
   } = props;
 
@@ -29,7 +30,7 @@ const Cover = (props) => {
         }
 
         .title {
-          font-size: 64px;
+          font-size: ${titleSize}px;
         }
 
         .subTitle {
