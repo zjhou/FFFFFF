@@ -8,6 +8,7 @@ const SweetheartCake = () => {
     <Frame
       fullMode
       showMidLine
+      cursor="w-resize"
       nextPageSrc={ROUTES.content}
     >
       <Cover

@@ -2,12 +2,13 @@ import React from 'react';
 import Link from 'next/link'
 import {Arrow} from './icons/arrow';
 
-const LinkTo = ({ src, children = null }) => (
+const LinkTo = ({ src, children = null, cursor = 'pointer' }) => (
   <Link href={src} >
     <a className="frame-link">
       { children }
       <style jsx>{`
         .frame-link {
+          cursor: ${cursor};
           display: flex;
           align-items: center;
           justify-content: center;
@@ -18,11 +19,11 @@ const LinkTo = ({ src, children = null }) => (
   </Link>
 );
 
-const FullFrame = ({ children, borderColor, showMidLine, borderWid = 1, nextPageSrc }) => {
+const FullFrame = ({ children, borderColor, showMidLine, borderWid = 1, nextPageSrc, cursor }) => {
   return (
     <div className="frame">
       { nextPageSrc
-          ? <div><LinkTo src={nextPageSrc}>{children}</LinkTo></div>
+          ? <div><LinkTo src={nextPageSrc} cursor={cursor}>{children}</LinkTo></div>
           : <div>{children}</div>
       }
       <style jsx>{`
@@ -34,6 +35,11 @@ const FullFrame = ({ children, borderColor, showMidLine, borderWid = 1, nextPage
           background-color: #FFFFFF;
           display: flex;
           flex-direction: column;
+        }
+        .frame > div {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
         }
         .frame::after {
           display: ${showMidLine ? 'block' : 'none'};
