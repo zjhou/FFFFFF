@@ -1,12 +1,18 @@
 import React from 'react';
 import Link from 'next/link'
+import {Arrow} from './icons/arrow';
 
 const LinkTo = ({ src, children = null }) => (
   <Link href={src} >
     <a className="frame-link">
       { children }
       <style jsx>{`
-        .frame-link {display: block; width: 100%; height: 100%;}
+        .frame-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1 1 auto;
+        }
       `}</style>
     </a>
   </Link>
@@ -79,7 +85,9 @@ const Frame = ({
           {leftRenderer()}
           {prevPageSrc && (
             <div className="frame-btn ">
-              <LinkTo src={prevPageSrc} />
+              <LinkTo src={prevPageSrc}>
+                <Arrow direction="left" />
+              </LinkTo>
             </div>
           )}
         </div>
@@ -88,7 +96,9 @@ const Frame = ({
         <div>
           {nextPageSrc && (
             <div className="frame-btn ">
-              <LinkTo src={nextPageSrc} />
+              <LinkTo src={nextPageSrc}>
+                <Arrow direction="right" />
+              </LinkTo>
             </div>
           )}
           {rightRenderer()}
@@ -128,6 +138,10 @@ const Frame = ({
         }
 
         .frame-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
           position: absolute;
           top: 0;
           bottom: 0;
@@ -138,8 +152,6 @@ const Frame = ({
           transition: all .3s;
           border: solid 1px rgba(255, 255, 255, 0);
         }
-
-        .frame-btn > .frame-link { display: block; width: 18px; height: 100%; }
 
         .frame-btn:hover {
           background-color: rgba(0, 0, 0, 0.02);

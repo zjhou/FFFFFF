@@ -46,7 +46,6 @@ const BaseHighlightEle = ({
 const HighlightEle = withTooltip(BaseHighlightEle);
 
 export default ({ eleName, eleClass, size, ...rest }) => {
-  console.log(rest);
   return (
     <HighlightEle
       size={size}

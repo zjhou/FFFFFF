@@ -1,5 +1,5 @@
 import React from 'react';
-import X from './X';
+import X from './icons/X';
 
 const Size = ({
   size = [0, 0], fontColor = 'black', fontSize = 12, margin = 3
