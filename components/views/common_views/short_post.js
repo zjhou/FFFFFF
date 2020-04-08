@@ -15,7 +15,7 @@ export const renderPostContent = (p) => () => {
       <HTML md={p.content} style={customMarkdownStyle} />
       <style jsx>{`
         .post-content {
-          width: 355px;
+          width: 435px;
         }
       `}</style>
     </div>
